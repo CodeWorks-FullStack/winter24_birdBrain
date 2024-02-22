@@ -1,1 +1,14 @@
 /* BASIC STYLES HERE */
+
+
+.bird-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.creator-picture {
+  height: 7.3vh;
+  width: 7.3vh;
+  border-radius: 50%;
+  object-fit: cover;
+}

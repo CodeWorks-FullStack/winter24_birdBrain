@@ -4,7 +4,7 @@ import { Pop } from "../utils/Pop.js";
 export class BirdsController {
   constructor () {
     console.log('BIRDS CONTROLLER LOADED');
-    Pop.success('You are so good at coding, jeremy + class')
+    // Pop.success('You are so good at coding, jeremy + class')
     this.getBirds()
   }
 
