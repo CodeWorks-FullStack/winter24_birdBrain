@@ -28,8 +28,8 @@ class BirdsService {
 
   async getWatchersByBirdId(birdId) {
     const response = await api.get(`api/birds/${birdId}/watchers`)
-    console.log('I get the watchers?', response.data)
 
+    AppState.watchers = response.data
   }
 
 }
