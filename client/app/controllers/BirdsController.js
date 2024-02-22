@@ -11,10 +11,16 @@ function _drawBirds() {
   setHTML('birdCards', htmlString)
 }
 
+function _drawActiveBird() {
+  const bird = AppState.activeBird
+  setHTML('activeBird', bird.ActiveDetailsHTMLTemplate)
+}
+
 
 export class BirdsController {
   constructor () {
     AppState.on('birds', _drawBirds)
+    AppState.on('activeBird', _drawActiveBird)
 
 
     console.log('BIRDS CONTROLLER LOADED');
@@ -46,5 +52,9 @@ export class BirdsController {
       Pop.error(error)
       console.error(error);
     }
+  }
+
+  setActiveBird(birdId) {
+    birdsService.setActiveBird(birdId)
   }
 }

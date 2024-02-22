@@ -10,6 +10,7 @@ body {
 
 header {
   background-image: url(/assets/img/Clouds.png);
+  background-size: cover;
 }
 
 input,
@@ -76,4 +77,8 @@ footer {
   width: 7.3vh;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.bird-details-card {
+  min-height: 60vh;
 }

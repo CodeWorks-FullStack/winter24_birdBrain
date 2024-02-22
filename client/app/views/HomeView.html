@@ -1,6 +1,6 @@
 <div class="container">
   <section class="row my-4">
-    <div class="col-8 m-auto bird-form p-4 rounded border border-dark border-4">
+    <div class="col-11 col-md-8  m-auto bird-form p-4 rounded border border-dark border-4">
       <form onsubmit="app.BirdsController.createBird()">
 
         <div class="form-floating mb-3">
@@ -55,4 +55,48 @@
       </div>
     </div> -->
   </section>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Bird Details</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="activeBird">
+        <!-- <div class="container-fluid">
+          <section class="row bird-details-section">
+            <div class="col-md-4 bird-details-card">
+              <h1>Pigeon</h1>
+              <p>In the park, a bird, swift and stealthy, seized food with eerie precision. A revelation struck this
+                wasn't nature's whimsy, but a government drone disguised.
+
+                Each stolen crumb hinted at covert surveillance. The tranquil park now echoed with the sinister dance of
+                espionage, leaving me unsettled in a reality where innocence and intrusion collided.</p>
+              <p>Seen on 12/12/2012 at 10:35PM</p>
+            </div>
+          </section>
+
+          <section class="row">
+            <div class="col-12">
+              <h2>0 Watchers</h2>
+              <div class="d-flex">
+                <img class="creator-picture mx-1"
+                  src="https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2023/06/Untitled_Artwork-116.png?fit=2400%2C1600&ssl=1"
+                  alt="BATMAN" title="Batman also saw this pigeon">
+              </div>
+            </div>
+          </section>
+        </div> -->
+      </div>
+    </div>
+  </div>
 </div>

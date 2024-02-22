@@ -3,6 +3,7 @@ import { Bird } from "../models/Bird.js";
 import { api } from "./AxiosService.js"
 
 class BirdsService {
+
   async getBirds() {
     const response = await api.get('api/birds')
     console.log('📡 GOT BIRDS', response.data);
@@ -17,6 +18,11 @@ class BirdsService {
     const newBird = new Bird(response.data)
     AppState.birds.push(newBird)
     AppState.emit('birds')
+  }
+
+  setActiveBird(birdId) {
+    const foundBird = AppState.birds.find(bird => bird.id == birdId)
+    AppState.activeBird = foundBird
   }
 }
 
