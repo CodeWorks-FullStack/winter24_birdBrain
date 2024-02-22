@@ -81,4 +81,14 @@ footer {
 
 .bird-details-card {
   min-height: 60vh;
+  background-color: rgba(64, 64, 64, 0.581);
+  color: white;
+  text-shadow: 1px 1px 3px black;
+  padding: 2em;
+  font-weight: bolder;
+}
+
+.bird-details-section {
+  background-size: cover;
+  background-position: center;
 }

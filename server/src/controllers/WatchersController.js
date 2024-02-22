@@ -4,7 +4,7 @@ import BaseController from "../utils/BaseController.js";
 
 export class WatchersController extends BaseController {
 
-  constructor() {
+  constructor () {
     super('/api/watchers')
     this.router
       .use(Auth0Provider.getAuthorizedUserInfo)

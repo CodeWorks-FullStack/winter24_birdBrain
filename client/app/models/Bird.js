@@ -4,18 +4,23 @@ export class Bird {
     this.name = data.name
     this.imgUrl = data.imgUrl
     this.location = data.location
-    this.description = data.description || ''
     this.creatorId = data.creatorId
     this.createdAt = new Date(data.createdAt)
     this.updatedAt = new Date(data.updatedAt)
     this.watchersCount = data.watchersCount
     this.creator = data.creator
+    this.dateSeen = new Date(data.dateSeen)
+    this.description = data.description || `In the park, a bird, swift and stealthy, seized food with eerie precision. A revelation struck this
+    wasn't nature's whimsy, but a government drone disguised.
+
+    Each stolen crumb hinted at covert surveillance. The tranquil park now echoed with the sinister dance of
+    espionage, leaving me unsettled in a reality where innocence and intrusion collided.`
   }
 
   get BirdCardHTMLTemplate() {
     return `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-      <div onclick="app.BirdsController.setActiveBird('${this.id}')" class="border border-dark border-3 rounded bird-card selectable" data-bs-toggle="modal" data-bs-target="#exampleModal" role="button" title="See details about ${this.name}">
+      <div onclick="app.BirdsController.setActiveBird('${this.id}')" class="border border-dark border-3 rounded bird-card selectable" data-bs-toggle="modal" data-bs-target="#birdNest" role="button" title="See details about ${this.name}">
         <div class="bg-dark">
           <img class="bird-img rounded-top"
             src="${this.imgUrl}"
@@ -38,15 +43,13 @@ export class Bird {
   get ActiveDetailsHTMLTemplate() {
     return `
     <div class="container-fluid">
-      <section class="row bird-details-section">
-        <div class="col-md-4 bird-details-card">
-          <h1>Pigeon</h1>
-          <p>In the park, a bird, swift and stealthy, seized food with eerie precision. A revelation struck this
-            wasn't nature's whimsy, but a government drone disguised.
-
-            Each stolen crumb hinted at covert surveillance. The tranquil park now echoed with the sinister dance of
-            espionage, leaving me unsettled in a reality where innocence and intrusion collided.</p>
-          <p>Seen on 12/12/2012 at 10:35PM</p>
+      <section class="row bird-details-section" style="background-image: url(${this.imgUrl});">
+        <div class="col-md-4 bird-details-card d-flex flex-column justify-content-between">
+          <div>
+            <h1>${this.name}</h1>
+            <p>${this.description}</p>
+          </div>
+          <p>Seen on ${this.dateSeen.toLocaleDateString()} at ${this.dateSeen.toLocaleTimeString()}</p>
         </div>
       </section>
 
