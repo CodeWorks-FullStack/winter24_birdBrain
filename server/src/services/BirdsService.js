@@ -2,7 +2,7 @@ import { dbContext } from "../db/DbContext.js"
 
 class BirdsService {
   async getBirds() {
-    const birds = await dbContext.Birds.find()
+    const birds = await dbContext.Birds.find().populate('creator', 'name picture')
     return birds
   }
   async createBird(birdData) {
