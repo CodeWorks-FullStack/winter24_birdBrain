@@ -1,14 +1,16 @@
 import { Auth0Provider } from "@bcwdev/auth0provider";
 import { birdsService } from "../services/BirdsService.js";
 import BaseController from "../utils/BaseController.js";
+import { watchersService } from "../services/WatchersService.js";
 
 
 export class BirdsController extends BaseController {
 
-  constructor () {
+  constructor() {
     super('api/birds')
     this.router
       .get('', this.getBirds)
+      .get('/:birdId/watchers', this.getWatchersByBirdId)
       .use(Auth0Provider.getAuthorizedUserInfo)
       // @ts-ignore
       .post('', this.createBird)
@@ -21,6 +23,16 @@ export class BirdsController extends BaseController {
       const birds = await birdsService.getBirds()
       // res.send({ results: birds, endpoint: '/api/birds', })
       res.send(birds)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async getWatchersByBirdId(req, res, next) {
+    try {
+      const birdId = req.params.birdId
+      const watchers = await watchersService.getWatchersByBirdId(birdId)
+      res.send(watchers)
     } catch (error) {
       next(error)
     }

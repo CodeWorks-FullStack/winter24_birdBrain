@@ -20,10 +20,18 @@ class BirdsService {
     AppState.emit('birds')
   }
 
-  setActiveBird(birdId) {
+  async setActiveBird(birdId) {
     const foundBird = AppState.birds.find(bird => bird.id == birdId)
     AppState.activeBird = foundBird
+    await this.getWatchersByBirdId(birdId)
   }
+
+  async getWatchersByBirdId(birdId) {
+    const response = await api.get(`api/birds/${birdId}/watchers`)
+    console.log('I get the watchers?', response.data)
+
+  }
+
 }
 
 export const birdsService = new BirdsService()
