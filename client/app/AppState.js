@@ -1,3 +1,4 @@
+import { Bird } from './models/Bird.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
 
@@ -6,6 +7,13 @@ class ObservableAppState extends EventEmitter {
   /** @type {import('./models/Account.js').Account | null} */
   // @ts-ignore
   account = null
+
+  /**
+   * @type {Bird[]}
+   */
+  birds = []
+
+
 
   // Used to load initial data
   init() {
