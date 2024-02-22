@@ -1,5 +1,5 @@
 export class Bird {
-  constructor (data) {
+  constructor(data) {
     this.id = data.id || data._id
     this.name = data.name
     this.imgUrl = data.imgUrl
@@ -66,6 +66,15 @@ export class Bird {
     </div>
     `
   }
+
+  get BirdWatchersTemplate() {
+    return `
+      <h1>Watchers should go here</h1>
+    `
+  }
+
+
+
 }
 
 const birdData = {
