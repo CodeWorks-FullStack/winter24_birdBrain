@@ -44,7 +44,7 @@ export class Bird {
     return `
     <div class="container-fluid">
       <section class="row bird-details-section" style="background-image: url(${this.imgUrl});">
-        <div class="col-md-4 bird-details-card d-flex flex-column justify-content-between">
+        <div class="col-12 col-lg-5 col-xl-4 bird-details-card d-flex flex-column justify-content-between">
           <div>
             <h1>${this.name}</h1>
             <p>${this.description}</p>
