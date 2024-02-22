@@ -5,7 +5,7 @@ import BaseController from "../utils/BaseController.js";
 
 export class BirdsController extends BaseController {
 
-  constructor() {
+  constructor () {
     super('api/birds')
     this.router
       .get('', this.getBirds)

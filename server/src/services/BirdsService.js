@@ -18,7 +18,7 @@ class BirdsService {
     if (!bird) {
       throw new Error('Bird not found or you are not the creator')
     }
-    return dbContext.Birds.findOneAndDelete({ _id: birdId, creator: userId })
+    await bird.deleteOne()
   }
 
 }
