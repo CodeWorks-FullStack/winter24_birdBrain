@@ -11,6 +11,13 @@ class BirdsService {
     // console.log(AppState.birds);
   }
 
+  async createBird(birdFormData) {
+    const response = await api.post('api/birds', birdFormData)
+    console.log('📡 CREATED BIRD', response.data);
+    const newBird = new Bird(response.data)
+    AppState.birds.push(newBird)
+    AppState.emit('birds')
+  }
 }
 
 export const birdsService = new BirdsService()

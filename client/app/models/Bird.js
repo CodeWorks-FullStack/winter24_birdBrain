@@ -12,7 +12,7 @@ export class Bird {
 
   get BirdCardHTMLTemplate() {
     return `
-    <div class="col-md-3">
+    <div class="col-md-3 mb-3">
       <div class="border border-dark rounded shadow">
         <img class="bird-img"
           src="${this.imgUrl}"
