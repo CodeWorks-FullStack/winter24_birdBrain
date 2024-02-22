@@ -1,5 +1,5 @@
 import { Schema } from "mongoose";
-import { CREATOR_ID, SCHEMA_OPTIONS, VIRTUAL_CREATOR_OPTIONS } from "../utils/SchemaUtils.js";
+import { ACCOUNT_REF, SCHEMA_OPTIONS, VIRTUAL_CREATOR_OPTIONS } from "../utils/SchemaUtils.js";
 
 function validateSeen() {
   return new Date(this.dateSeen) < new Date()
@@ -13,7 +13,7 @@ export const BirdSchema = new Schema({
   description: { type: String, default: '', maxlength: 500 },
 
   // RELATIONSHIPS
-  creatorId: CREATOR_ID
+  creatorId: ACCOUNT_REF
 
 }, SCHEMA_OPTIONS)
 
@@ -27,3 +27,10 @@ export const BirdSchema = new Schema({
 
 // BETTER SHORTHAND
 BirdSchema.virtual('creator', VIRTUAL_CREATOR_OPTIONS)
+
+BirdSchema.virtual('watchersCount', {
+  ref: 'Watcher',
+  localField: '_id',
+  foreignField: 'birdId',
+  count: true
+})
