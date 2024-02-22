@@ -30,7 +30,7 @@ function _drawAuthSettings() {
   document.body.appendChild(elem)
 }
 export class AuthController {
-  constructor() {
+  constructor () {
     AppState.on('account', drawUser)
     AuthService.on(AuthService.AUTH_EVENTS.LOADED, drawUser)
     AuthService.on(AuthService.AUTH_EVENTS.LOADED, _drawAuthSettings)
@@ -71,7 +71,7 @@ function avatarTemplate(account) {
     <div class="mr-2">
       <a href="/#/account" class="text-white nav-link selectable rounded" title="Manage Account">
         <img class="rounded-circle profile-picture profile-picture-sm" src="${account.picture}" alt="${account.name}" />
-        <span class="mx-1">${account.name}</span>
+        <span class="mx-1 account-name">${account.name}</span>
       </a>
     </div>`
     : AuthService.loading
