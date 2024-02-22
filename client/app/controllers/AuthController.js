@@ -70,7 +70,7 @@ function avatarTemplate(account) {
     ? /* html */ `
     <div class="mr-2">
       <a href="/#/account" class="text-white nav-link selectable rounded" title="Manage Account">
-        <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
+        <img class="rounded-circle profile-picture profile-picture-sm" src="${account.picture}" alt="${account.name}" />
         <span class="mx-1">${account.name}</span>
       </a>
     </div>`
