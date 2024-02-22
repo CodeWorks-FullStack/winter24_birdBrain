@@ -1,11 +1,11 @@
 import { Pop } from "../utils/Pop.js"
 
 export class HomeController {
-  constructor() {
+  constructor () {
     console.log('This is the Home Controller')
   }
 
-  testButton(){
+  testButton() {
     Pop.success('The button Works 😎')
   }
 }

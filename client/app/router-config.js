@@ -1,5 +1,5 @@
 import { AccountController } from "./controllers/AccountController.js";
-import { HomeController } from "./controllers/HomeController.js";
+import { BirdsController } from "./controllers/BirdsController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
 
@@ -7,15 +7,8 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [HomeController],
-    view: /*html*/`
-    <div class="bg-white p-3">
-      <div class="card-body">
-        <p>Home Page</p>
-        <button class="btn btn-dark" onclick="app.HomeController.testButton()">😎</button>
-      </div>
-    </div>
-    `
+    controllers: [BirdsController],
+    view: 'app/views/HomeView.html'
   },
   {
     path: '#/about',

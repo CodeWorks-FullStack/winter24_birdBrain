@@ -9,3 +9,16 @@
 .profile-picture.profile-picture-sm {
   height: 64px;
 }
+
+.bird-img {
+  width: 100%;
+  height: 33vh;
+  object-fit: cover;
+}
+
+.creator-picture {
+  height: 7.3vh;
+  width: 7.3vh;
+  border-radius: 50%;
+  object-fit: cover;
+}
