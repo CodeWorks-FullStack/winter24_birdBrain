@@ -1,4 +1,31 @@
 /* BASIC STYLES HERE */
+:root {
+  --robin-egg: #88CDDD;
+  --electric-ostrich: #F3FD37;
+}
+
+body {
+  background-color: var(--robin-egg);
+}
+
+input,
+textarea {
+  border: 3px solid black !important;
+}
+
+textarea {
+  min-height: 20vh !important;
+}
+
+.bird-form {
+  background-color: var(--electric-ostrich);
+}
+
+.bird-card {
+  background-color: var(--robin-egg);
+  box-shadow: 8px 4px var(--electric-ostrich);
+}
+
 .profile-picture {
   height: 200px;
   max-width: 100%;
