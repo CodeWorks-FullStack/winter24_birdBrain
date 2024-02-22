@@ -17,6 +17,12 @@ textarea {
   min-height: 20vh !important;
 }
 
+footer {
+  min-height: 12dvh;
+  background-image: url(/assets/img/Grass.png);
+  background-size: cover;
+}
+
 .bird-form {
   background-color: var(--electric-ostrich);
 }
