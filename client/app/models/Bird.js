@@ -14,10 +14,11 @@ export class Bird {
     return `
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
       <div class="border border-dark border-3 rounded bird-card">
-        <img class="bird-img rounded-top"
-          src="${this.imgUrl}"
-          alt="${this.name}">
-
+        <div class="bg-dark">
+          <img class="bird-img rounded-top"
+            src="${this.imgUrl}"
+            alt="${this.name}">
+        </div>
         <div class="p-3 d-flex justify-content-between align-items-center border-top border-dark">
           <div>
             <p class="fs-4 fw-bold">${this.name}</p>
