@@ -13,6 +13,13 @@ class BirdsService {
     await bird.populate('creator', 'name picture')
     return bird
   }
+  async deleteBird(birdId, userId) {
+    const bird = await dbContext.Birds.findOne({ _id: birdId, creatorId: userId })
+    if (!bird) {
+      throw new Error('Bird not found or you are not the creator')
+    }
+    return dbContext.Birds.findOneAndDelete({ _id: birdId, creator: userId })
+  }
 
 }
 

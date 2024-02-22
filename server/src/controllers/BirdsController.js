@@ -5,13 +5,14 @@ import BaseController from "../utils/BaseController.js";
 
 export class BirdsController extends BaseController {
 
-  constructor () {
+  constructor() {
     super('api/birds')
     this.router
       .get('', this.getBirds)
       .use(Auth0Provider.getAuthorizedUserInfo)
       // @ts-ignore
       .post('', this.createBird)
+      .delete('/:birdId', this.deleteBird)
   }
 
 
@@ -43,5 +44,16 @@ export class BirdsController extends BaseController {
       next(error)
     }
   }
+
+  async deleteBird(req, res, next) {
+    try {
+      const birdId = req.params.birdId;
+      await birdsService.deleteBird(birdId, req.userInfo.id);
+      res.send("Bird deleted successfully");
+    } catch (error) {
+      next(error);
+    }
+  }
+
 
 }
