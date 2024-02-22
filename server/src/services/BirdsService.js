@@ -7,6 +7,8 @@ class BirdsService {
   }
   async createBird(birdData) {
     const bird = await dbContext.Birds.create(birdData)
+    // NOTE Special syntax for populate on creates
+    await bird.populate('creator', 'name picture')
     return bird
   }
 
