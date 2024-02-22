@@ -92,3 +92,7 @@ footer {
   background-size: cover;
   background-position: center;
 }
+
+.text-shadow {
+  text-shadow: 1px 1px 3px black;
+}
