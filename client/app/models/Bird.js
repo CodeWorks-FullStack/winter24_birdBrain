@@ -15,12 +15,12 @@ export class Bird {
     <div class="col-md-3">
       <div class="border border-dark rounded shadow">
         <img class="bird-img"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5gnvtiF4xRH-ggQefOKbeSi7ZLot7PZC8nA&usqp=CAU"
-          alt="The boy wonder">
+          src="${this.imgUrl}"
+          alt="${this.name}">
 
         <div class="p-3 d-flex justify-content-between align-items-center">
           <div>
-            <p class="fs-4 fw-bold">The Boy Wonder</p>
+            <p class="fs-4 fw-bold">${this.name}</p>
             <p class="fs-4">👀 0</p>
           </div>
           <img class="creator-picture"
