@@ -7,7 +7,7 @@ export class Bird {
     this.creatorId = data.creatorId
     this.createdAt = new Date(data.createdAt)
     this.updatedAt = new Date(data.updatedAt)
-    this.watchersCount = data.watchersCount
+    this.watchersCount = data.watchersCount || 0
     this.creator = data.creator
     this.dateSeen = new Date(data.dateSeen)
     this.description = data.description || `In the park, a bird, swift and stealthy, seized food with eerie precision. A revelation struck this

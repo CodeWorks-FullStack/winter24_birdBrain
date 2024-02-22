@@ -34,9 +34,11 @@
         <div class="navbar-nav">
           <!-- NAVLINKS -->
           <!-- <a href="#/about" class="nav-link">About</a> -->
+          <button class="btn fs-1 text-shadow" data-bs-toggle="modal" data-bs-target="#birdFormModal"
+            title="Open bird form! CAW! CAW!">🦅</button>
         </div>
       </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+      <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
     </nav>
   </header>
 
@@ -53,6 +55,55 @@
   <!-- SECTION -->
   <footer>
   </footer>
+
+  <div class="modal fade" id="birdFormModal" tabindex="-1" aria-labelledby="birdFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bird-form rounded border border-dark border-4">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="birdFormModalLabel">Create Bird</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="app.BirdsController.createBird()">
+
+            <div class="form-floating mb-3">
+              <input type="text" required name="name" class="form-control" id="name" placeholder="Bird Name"
+                maxlength="100">
+              <label for="name">Bird Name</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="url" required name="imgUrl" maxlength="500" class="form-control" id="imgUrl"
+                placeholder="Bird Image URL">
+              <label for="imgUrl">Bird Image URL</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" required name="location" maxlength="500" class="form-control" id="location"
+                placeholder="Bird Location">
+              <label for="location">Bird Location</label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea class="form-control" name="description" placeholder="Leave a comment here" id="description"
+                maxlength="500"></textarea>
+              <label for="description">Description of Bird</label>
+            </div>
+
+            <div class="mb-3">
+              <label for="dateSeen" class="fw-bold">When did you see this bird?</label>
+              <input type="date" name="daeSeen" id="dateSeen" max="">
+            </div>
+
+            <div class="text-end">
+              <button class="btn btn-outline-dark fw-bold" type="submit">Submit</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

@@ -16,6 +16,14 @@ function _drawActiveBird() {
   setHTML('activeBird', bird.ActiveDetailsHTMLTemplate)
 }
 
+// NOTE sets max allowed date on datepicker to today's date
+function _setMaxDate() {
+  const datePickerElement = document.getElementById('dateSeen')
+  const today = new Date().toISOString().substring(0, 10)
+  datePickerElement.setAttribute('max', today)
+  datePickerElement.setAttribute('value', today)
+}
+
 
 export class BirdsController {
   constructor () {
@@ -25,6 +33,7 @@ export class BirdsController {
 
     console.log('BIRDS CONTROLLER LOADED');
     // Pop.success('You are so good at coding, jeremy + class')
+    _setMaxDate()
     this.getBirds()
   }
 
@@ -48,6 +57,10 @@ export class BirdsController {
       Pop.success(`You saw ${birdFormData.name}!`)
       // @ts-ignore
       form.reset()
+
+      // NOTE closes bootstrap modal
+      // @ts-ignore
+      bootstrap.Modal.getOrCreateInstance('#birdFormModal').hide()
     } catch (error) {
       Pop.error(error)
       console.error(error);
