@@ -11,7 +11,7 @@ function _drawAccount() {
 }
 
 export class AccountController {
-  constructor() {
+  constructor () {
     AppState.on('account', _drawAccount)
     _drawAccount()
   }

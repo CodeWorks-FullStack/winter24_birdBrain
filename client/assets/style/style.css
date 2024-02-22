@@ -8,6 +8,10 @@ body {
   background-color: var(--robin-egg);
 }
 
+header {
+  background-image: url(/assets/img/Clouds.png);
+}
+
 input,
 textarea {
   border: 3px solid black !important;
@@ -21,6 +25,24 @@ footer {
   min-height: 12dvh;
   background-image: url(/assets/img/Grass.png);
   background-size: cover;
+}
+
+.finger-paint-font {
+  font-family: "Finger Paint", sans-serif;
+  font-style: normal;
+}
+
+.account-name {
+  text-shadow: 1px 1px 4px black;
+}
+
+.font-outline {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.text-electric-ostrich {
+  color: var(--electric-ostrich);
 }
 
 .bird-form {
