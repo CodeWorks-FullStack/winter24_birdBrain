@@ -56,25 +56,12 @@ export class Bird {
       </section>
 
       <section class="row">
-        <div class="col-12" id="active-watchers"></div>
+        <div class="col-12">
+          <h2><span id="watcherCount">0 watchers</span> watching this bird</h2>
+        </div>
+        <div class="col-12" id="watcherPictures"></div>
       </section>
     </div>
-    `
-  }
-
-  get BirdWatchersTemplate() {
-    let htmlTemplate = ''
-    AppState.watchers.forEach(w => {
-      htmlTemplate += `<img class="creator-picture mx-1"
-          src="${w.profile.picture}"
-          alt="BATMAN" title="${w.profile.name} also saw this pigeon">`
-    })
-
-    return `
-      <h2>${AppState.watchers.length} Watchers are watching the watchable bird</h2>
-      <div class="d-flex gap-3">
-        ${htmlTemplate}
-      </div>
     `
   }
 

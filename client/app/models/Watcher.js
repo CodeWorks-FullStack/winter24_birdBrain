@@ -7,6 +7,12 @@ export class Watcher {
     this.updatedAt = new Date(data.updatedAt)
     this.profile = data.profile
   }
+
+  get ProfilePictureHTMLTemplate() {
+    return `
+    <img class="creator-picture mx-1" src="${this.profile.picture}" alt="BATMAN" title="${this.profile.name} also saw this bird">
+    `
+  }
 }
 
 const watcherData = {
