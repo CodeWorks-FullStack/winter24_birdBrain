@@ -27,7 +27,6 @@ class WatchersService {
 
   async destroyWatcher(watcherId) {
     const response = await api.delete(`api/watchers/${watcherId}`)
-    console.log(response.data);
     const watcherIndex = AppState.watchers.findIndex(watcher => watcher.id == watcherId)
     if (watcherIndex == -1) {
       throw new Error('findIndex is messed up, dawg')

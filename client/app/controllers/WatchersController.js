@@ -41,6 +41,15 @@ export class WatchersController {
 
   async destroyWatcher(watcherId) {
     try {
+      const wantsToDestroy = await Pop.confirm(
+        "Are you sure you haven't seen that bird?",
+        "You already said that you did, which is kind of weird TBH",
+        "Yeah dude I made a mistake okay")
+
+      if (!wantsToDestroy) {
+        return
+      }
+
       await watchersService.destroyWatcher(watcherId)
     } catch (error) {
       Pop.error(error)
