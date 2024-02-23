@@ -1,5 +1,6 @@
 import { AccountController } from "./controllers/AccountController.js";
 import { BirdsController } from "./controllers/BirdsController.js";
+import { WatchersController } from "./controllers/WatchersController.js";
 import { AuthGuard } from "./services/AuthService.js";
 import { Router } from "./utils/Router.js";
 
@@ -7,7 +8,7 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [BirdsController],
+    controllers: [BirdsController, WatchersController],
     view: 'app/views/HomeView.html'
   },
   {
