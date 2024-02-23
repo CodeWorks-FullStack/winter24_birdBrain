@@ -7,8 +7,10 @@ export class WatchersController extends BaseController {
   constructor () {
     super('/api/watchers')
     this.router
+      // NOTE must be logged in for all routes
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createWatcher)
+      .delete('/:watcherId', this.destroyWatcher)
   }
 
 

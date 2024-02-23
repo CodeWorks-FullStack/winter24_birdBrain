@@ -12,9 +12,9 @@ export class BirdsController extends BaseController {
       .get('', this.getBirds)
       .get('/:birdId/watchers', this.getWatchersByBirdId)
       .use(Auth0Provider.getAuthorizedUserInfo)
-      // @ts-ignore
       .post('', this.createBird)
       .delete('/:birdId', this.deleteBird)
+      .put('/:birdId', this.updateBird)
   }
 
 
@@ -66,6 +66,19 @@ export class BirdsController extends BaseController {
       res.send("Bird deleted successfully");
     } catch (error) {
       next(error);
+    }
+  }
+
+  async updateBird(req, res, next) {
+    try {
+      const birdId = req.params.birdId
+      const birdData = req.body
+      // NOTE the id of the user making the request
+      const userId = req.userInfo.id
+      const bird = await birdsService.updateBird(birdId, birdData, userId)
+      res.send(bird)
+    } catch (error) {
+      next(error)
     }
   }
 

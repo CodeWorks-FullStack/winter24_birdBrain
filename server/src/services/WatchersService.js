@@ -17,6 +17,7 @@ class WatchersService {
   async destroyWatcher(watcherId, userId) {
     const watcher = await dbContext.Watchers.findById(watcherId)
 
+    // NOTE null check
     if (!watcher) {
       throw new BadRequest(`No watcher found with id: ${watcherId}`)
     }
