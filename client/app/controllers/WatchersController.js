@@ -29,4 +29,13 @@ export class WatchersController {
       console.error(error);
     }
   }
+
+  async createWatcher() {
+    try {
+      await watchersService.createWatcher()
+    } catch (error) {
+      Pop.error(error)
+      console.error(error);
+    }
+  }
 }

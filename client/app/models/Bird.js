@@ -57,7 +57,12 @@ export class Bird {
 
       <section class="row">
         <div class="col-12">
-          <h2><span id="watcherCount">0 watchers</span> watching this bird</h2>
+          <div class="d-block d-md-flex gap-3 align-items-center">
+            <h2><span id="watcherCount">0 watchers</span> watching this bird</h2>
+            <button onclick="app.WatchersController.createWatcher()" class="btn btn-outline-dark">
+             I've seen that bird
+            </button>
+          </div>
         </div>
         <div class="col-12" id="watcherPictures"></div>
       </section>

@@ -10,7 +10,7 @@ class WatchersService {
 
   async createWatcher(watcherData) {
     const watcher = await dbContext.Watchers.create(watcherData)
-    watcher.populate('profile', 'name picture')
+    await watcher.populate('profile', 'name picture')
     return watcher
   }
 
