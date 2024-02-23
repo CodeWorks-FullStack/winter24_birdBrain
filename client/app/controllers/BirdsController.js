@@ -24,16 +24,11 @@ function _setMaxDate() {
   datePickerElement.setAttribute('value', today)
 }
 
-function _drawWatchers() {
-  setHTML('active-watchers', AppState.activeBird.BirdWatchersTemplate)
-}
-
 
 export class BirdsController {
-  constructor() {
+  constructor () {
     AppState.on('birds', _drawBirds)
     AppState.on('activeBird', _drawActiveBird)
-    AppState.on('watchers', _drawWatchers)
 
 
     console.log('BIRDS CONTROLLER LOADED');

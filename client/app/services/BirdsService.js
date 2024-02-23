@@ -23,13 +23,6 @@ class BirdsService {
   async setActiveBird(birdId) {
     const foundBird = AppState.birds.find(bird => bird.id == birdId)
     AppState.activeBird = foundBird
-    await this.getWatchersByBirdId(birdId)
-  }
-
-  async getWatchersByBirdId(birdId) {
-    const response = await api.get(`api/birds/${birdId}/watchers`)
-
-    AppState.watchers = response.data
   }
 
 }
