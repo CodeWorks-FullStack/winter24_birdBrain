@@ -59,15 +59,40 @@ export class Bird {
         <div class="col-12">
           <div class="d-block d-md-flex gap-3 align-items-center">
             <h2><span id="watcherCount">0 watchers</span> watching this bird</h2>
-            <button onclick="app.WatchersController.createWatcher()" class="btn btn-outline-dark">
-             I've seen that bird
-            </button>
+           ${this.ComputeWatchButton}
           </div>
         </div>
         <div class="col-12" id="watcherPictures"></div>
       </section>
     </div>
     `
+  }
+
+  get ComputeWatchButton() {
+    const account = AppState.account
+
+    // If user is not logged in
+    if (!account) {
+      return ''
+    }
+
+    const foundWatcher = AppState.watchers.find(watcher => watcher.accountId == account.id)
+
+    if (!foundWatcher) {
+      return `
+      <button onclick="app.WatchersController.createWatcher()" class="btn btn-outline-dark">
+        I've seen that bird
+      </button>
+      `
+    }
+
+    // else
+    return `
+    <button onclick="app.WatchersController.destroyWatcher('${foundWatcher.id}')" class="btn btn-outline-danger">
+      Oh wait, I haven't seen that bird
+    </button>
+    `
+
   }
 
 

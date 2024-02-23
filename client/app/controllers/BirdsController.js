@@ -29,6 +29,7 @@ export class BirdsController {
   constructor () {
     AppState.on('birds', _drawBirds)
     AppState.on('activeBird', _drawActiveBird)
+    AppState.on('watchers', _drawActiveBird)
 
 
     console.log('BIRDS CONTROLLER LOADED');

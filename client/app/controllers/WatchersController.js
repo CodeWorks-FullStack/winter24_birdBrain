@@ -38,4 +38,13 @@ export class WatchersController {
       console.error(error);
     }
   }
+
+  async destroyWatcher(watcherId) {
+    try {
+      await watchersService.destroyWatcher(watcherId)
+    } catch (error) {
+      Pop.error(error)
+      console.error(error);
+    }
+  }
 }
