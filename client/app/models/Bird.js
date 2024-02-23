@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+
 export class Bird {
   constructor(data) {
     this.id = data.id || data._id
@@ -54,22 +56,25 @@ export class Bird {
       </section>
 
       <section class="row">
-        <div class="col-12">
-          <h2>0 Watchers</h2>
-          <div class="d-flex">
-            <img class="creator-picture mx-1"
-              src="https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2023/06/Untitled_Artwork-116.png?fit=2400%2C1600&ssl=1"
-              alt="BATMAN" title="Batman also saw this pigeon">
-          </div>
-        </div>
+        <div class="col-12" id="active-watchers"></div>
       </section>
     </div>
     `
   }
 
   get BirdWatchersTemplate() {
+    let htmlTemplate = ''
+    AppState.watchers.forEach(w => {
+      htmlTemplate += `<img class="creator-picture mx-1"
+          src="${w.profile.picture}"
+          alt="BATMAN" title="${w.profile.name} also saw this pigeon">`
+    })
+
     return `
-      <h1>Watchers should go here</h1>
+      <h2>${AppState.watchers.length} Watchers are watching the watchable bird</h2>
+      <div class="d-flex gap-3">
+        ${htmlTemplate}
+      </div>
     `
   }
 

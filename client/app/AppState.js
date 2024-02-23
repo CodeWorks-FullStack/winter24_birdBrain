@@ -18,6 +18,8 @@ class ObservableAppState extends EventEmitter {
    */
   activeBird = null
 
+  watchers = []
+
   // Used to load initial data
   init() {
 
