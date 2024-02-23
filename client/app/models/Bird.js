@@ -1,7 +1,7 @@
 import { AppState } from "../AppState.js"
 
 export class Bird {
-  constructor(data) {
+  constructor (data) {
     this.id = data.id || data._id
     this.name = data.name
     this.imgUrl = data.imgUrl
@@ -51,7 +51,7 @@ export class Bird {
             <h1>${this.name}</h1>
             <p>${this.description}</p>
           </div>
-          <p>Seen on ${this.dateSeen.toLocaleDateString()} at ${this.dateSeen.toLocaleTimeString()}</p>
+          <p class="mb-0">Seen on ${this.dateSeen.toLocaleDateString()} at ${this.dateSeen.toLocaleTimeString()}</p>
         </div>
       </section>
 
