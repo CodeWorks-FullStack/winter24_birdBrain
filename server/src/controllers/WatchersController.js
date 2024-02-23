@@ -23,4 +23,17 @@ export class WatchersController extends BaseController {
     }
   }
 
+  async destroyWatcher(req, res, next) {
+    try {
+      // NOTE the _id of the many-to-many relationship
+      const watcherId = req.params.watcherId
+      // NOTE the id of the user making the request
+      const userId = req.userInfo.id
+      const message = await watchersService.destroyWatcher(watcherId, userId)
+      res.send(message)
+    } catch (error) {
+      next(error)
+    }
+  }
+
 }

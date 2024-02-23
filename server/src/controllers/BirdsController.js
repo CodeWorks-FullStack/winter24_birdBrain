@@ -6,7 +6,7 @@ import { watchersService } from "../services/WatchersService.js";
 
 export class BirdsController extends BaseController {
 
-  constructor() {
+  constructor () {
     super('api/birds')
     this.router
       .get('', this.getBirds)
@@ -48,6 +48,8 @@ export class BirdsController extends BaseController {
   async createBird(req, res, next) {
     try {
       const birdData = req.body
+
+      // @ts-ignore
       // v this enforces the right user from the bearer token
       birdData.creatorId = req.userInfo.id;
       const bird = await birdsService.createBird(birdData)
